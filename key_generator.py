@@ -47,3 +47,4 @@ def key_maker(a, k):
     public_key.write("Your public key n component =" + str(n))
     public_key.close
     return (public_file_name, private_file_name)
+print key_maker(50, 15)

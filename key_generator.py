@@ -3,6 +3,7 @@ from pseudo_prime_check import isPrime
 from pseudo_prime_check import isStrongPseudoprime
 import random
 import fractions
+import uuid
 
 
 def prime_maker(a, k):
@@ -32,8 +33,17 @@ def key_maker(a, k):
     while fractions.gcd(e, totient) != 1:
         e = random.randint(2, totient)
     d = mulinv(e, totient)
-    private_key = open("private_key.txt", "w")
-    private_key.write(str(d))
+    hexi = str(uuid.uuid4().hex)
+    private_file_name = "Private_"+ hexi + ".txt"
+    private_key = open(private_file_name, "w")
+    private_key.write("Your private key d component =" + str(d))
+    private_key.write("\n")
+    private_key.write("YOur private key n component =" + str(n))
     private_key.close
-    return e
-print key_maker(100, 15)
+    public_file_name = "Public_" + hexi + "txt"
+    public_key = open(public_file_name, "w")
+    public_key.write("Your public key e component =" + str(e))
+    public_key.write("\n")
+    public_key.write("Your public key n component =" + str(n))
+    public_key.close
+    return (public_file_name, private_file_name)

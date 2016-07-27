@@ -30,7 +30,3 @@ def isPrime(n, k):
         if isStrongPseudoprime(n, a) == "Composite":
             return "Composite"
     return "Probably Prime"
-semi = math.factorial(38) + 1
-print isPrime(semi, 2)
-semi_2 = 20988936657440586486151264256610222593863921
-print isPrime(semi_2, 15)

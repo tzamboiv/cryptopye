@@ -10,6 +10,23 @@ from key_generator import egcd
 from key_generator import mulinv
 from key_generator import prime_maker
 
+#This is encryptor. This program encrypts and decrypts integer inputs using public and private keys. It is part of the cyptopye project oon github.
+    #Copyright (C) 2016  Edward "Teddy" Zamborsky
+
+    #This program is free software: you can redistribute it and/or modify
+    #it under the terms of the GNU General Public License as published by
+    #the Free Software Foundation, either version 3 of the License, or
+    #(at your option) any later version.
+
+    #This program is distributed in the hope that it will be useful,
+    #but WITHOUT ANY WARRANTY; without even the implied warranty of
+    #MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    #GNU General Public License for more details.
+
+    #You should have received a copy of the GNU General Public License
+    #along with this program.  If not, see <http://www.gnu.org/licenses/>.
+    #Contact the author by email at tzamboiv@gmail.com (Public key is available online) or on twitter @tzamboiv
+
 def encryptor(n,e, plain_num):
     #encrypts an integer using e, the public key, and n
     ciphertext = pow(plain_num, e, n)

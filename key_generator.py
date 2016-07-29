@@ -8,6 +8,23 @@ from Crypto.Util.number import bytes_to_long, long_to_bytes
 import os
 import time
 
+#This is key_generator. This program generates a public key and private key and writes them to text fies. It is part of the cyptopye project oon github.
+    #Copyright (C) 2016  Edward "Teddy" Zamborsky
+
+    #This program is free software: you can redistribute it and/or modify
+    #it under the terms of the GNU General Public License as published by
+    #the Free Software Foundation, either version 3 of the License, or
+    #(at your option) any later version.
+
+    #This program is distributed in the hope that it will be useful,
+    #but WITHOUT ANY WARRANTY; without even the implied warranty of
+    #MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    #GNU General Public License for more details.
+
+    #You should have received a copy of the GNU General Public License
+    #along with this program.  If not, see <http://www.gnu.org/licenses/>.
+    #Contact the author by email at tzamboiv@gmail.com (Public key is available online) or on twitter @tzamboiv
+
 #start = time.clock()
 
 def prime_maker(a, k):

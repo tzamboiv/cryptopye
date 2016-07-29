@@ -8,7 +8,7 @@ from Crypto.Util.number import bytes_to_long, long_to_bytes
 import os
 import time
 
-start = time.clock()
+#start = time.clock()
 
 def prime_maker(a, k):
 #k corresponds to degree of certainty that this output is prime
@@ -33,9 +33,7 @@ def key_maker(a, k):
     q = prime_maker(a, k)
     n = p * q
     totient = (p-1)*(q-1)
-    e = random.randint(2, 100000)
-    while fractions.gcd(e, totient) != 1:
-        e = random.randint(2, 100000)
+    e = 2 ** 16 + 1
     d = mulinv(e, totient)
     hexi = str(uuid.uuid4().hex)
     private_file_name = "Private_"+ hexi + ".txt"
@@ -51,7 +49,7 @@ def key_maker(a, k):
     public_key.write("Your public key n component =" + str(n))
     public_key.close
     return (public_file_name, private_file_name)
-key_length = int(input("enter key length in bits"))
-print key_maker(key_length, 15)
-end = time.clock()
-print "Time to run is " + str(end - start) + " seconds"
+#key_length = int(input("enter key length in bits"))
+#print key_maker(key_length, 15)
+#end = time.clock()
+#print "Time to run is " + str(end - start) + " seconds"

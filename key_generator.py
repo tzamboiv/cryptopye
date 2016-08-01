@@ -3,7 +3,6 @@ from pseudo_prime_check import isPrime
 from pseudo_prime_check import isStrongPseudoprime
 import random
 import fractions
-import uuid
 from Crypto.Util.number import bytes_to_long, long_to_bytes
 import os
 import time

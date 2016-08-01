@@ -25,7 +25,7 @@ import time
     #along with this program.  If not, see <http://www.gnu.org/licenses/>.
     #Contact the author by email at tzamboiv@gmail.com (Public key is available online) or on twitter @tzamboiv
 
-#start = time.clock()
+start = time.clock()
 
 
 w = "THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW.  EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM 'AS IS' WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.  THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU.  SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION."
@@ -56,7 +56,7 @@ def key_maker(a, k):
     totient = (p-1)*(q-1)
     e = 2 ** 16 + 1
     d = mulinv(e, totient)
-    hexi = str(uuid.uuid4().hex)
+    hexi = str(bytes_to_long(os.urandom(16)))
     private_file_name = "Private_"+ hexi + ".txt"
     private_key = open(private_file_name, "w")
     private_key.write("Your private key d component =" + str(d))
@@ -70,7 +70,7 @@ def key_maker(a, k):
     public_key.write("Your public key n component =" + str(n))
     public_key.close
     return (public_file_name, private_file_name)
-#key_length = int(input("enter key length in bits"))
-#print key_maker(key_length, 15)
-#end = time.clock()
-#print "Time to run is " + str(end - start) + " seconds"
+key_length = int(input("enter key length in bits"))
+print key_maker(key_length, 15)
+end = time.clock()
+print "Time to run is " + str(end - start) + " seconds"
